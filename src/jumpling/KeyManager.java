@@ -20,6 +20,7 @@ public class KeyManager implements KeyListener {
 
 	@Override
 	public void keyPressed(KeyEvent e) {
+		
 		keys[e.getKeyCode()] = true;
 		if (e.getKeyCode() == KeyEvent.VK_SPACE){
 			counter += 0.1;
@@ -42,6 +43,7 @@ public class KeyManager implements KeyListener {
 			}
 			counter = 4; //Not 100% sure I need this lol
 		}
+		Player.jumping = false;
 		
 	}
 

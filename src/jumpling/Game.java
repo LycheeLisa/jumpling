@@ -4,6 +4,8 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
+import java.io.IOException;
+import java.net.MalformedURLException;
 
 import jumpling.Display;
 
@@ -33,7 +35,7 @@ public class Game implements Runnable {
 
 	}
 
-	private void init() {
+	private void init() throws MalformedURLException, IOException {
 		display = new Display(title, width, height);
 		display.getFrame().addKeyListener(keyManager);
 		Assets.init();
@@ -70,7 +72,15 @@ public class Game implements Runnable {
 
 	@Override
 	public void run() {
-		init();
+		try {
+			init();
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		int fps = 60;
 		// 1B nanoseconds in 1 second, divide 1 second by how many frames per
 		// second wanted

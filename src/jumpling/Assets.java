@@ -1,12 +1,20 @@
 package jumpling;
 
+import java.awt.Image;
 import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
+
+import javax.imageio.ImageIO;
 
 public class Assets {
+//	public static Image icon;
 	public static BufferedImage player, playerl, jumpr, jumpl, ltile, ctile, c2tile, rtile, background;
 	private static final int width = 75, height = 75;
 	
-	public static void init(){
+	public static void init() throws MalformedURLException, IOException{
 		SpriteSheet sheet = new SpriteSheet(ImageLoader.loadImage("/textures/sprites.png"));
 		background = ImageLoader.loadImage("/textures/background1.gif");
 		player = (sheet.crop(0, 0, width, height));
