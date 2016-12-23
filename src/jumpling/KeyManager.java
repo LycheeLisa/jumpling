@@ -13,8 +13,6 @@ public class KeyManager implements KeyListener {
 	}
 	
 	public void tick(){
-//		up = keys[KeyEvent.VK_UP];
-//		down = keys[KeyEvent.VK_DOWN];
 		left = keys[KeyEvent.VK_LEFT];
 		right = keys[KeyEvent.VK_RIGHT];
 		jump = keys[KeyEvent.VK_SPACE];
@@ -42,8 +40,7 @@ public class KeyManager implements KeyListener {
 			if (Player.image == Assets.jumpr){
 				Player.image = Assets.player;
 			}
-			System.out.println("Reached this loop");
-			counter = 4;
+			counter = 4; //Not 100% sure I need this lol
 		}
 		
 	}

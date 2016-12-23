@@ -5,6 +5,7 @@ import java.awt.Graphics;
 public class GameState extends State{
 	private int x = 0;
 	private Player player;
+	public static int screen = -800;
 	
 	public GameState(Game game){
 		super(game);
@@ -18,7 +19,7 @@ public class GameState extends State{
 
 	@Override
 	public void render(Graphics g) {
-		g.drawImage(Assets.background, 0, 0, null);
+		g.drawImage(Assets.background, 0, screen, null);
 		player.render(g);
 
 	}
